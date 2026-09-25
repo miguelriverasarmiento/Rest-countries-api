@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 300 600 800;
+  font-display: swap;
+  src: url("src/assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC.ttf") format("woff2");
+}
+
+@theme {
+  --color-Blue-900-Dark-Mode-Elements: hsl(209, 23%, 22%);
+  --color-Blue-950-Dark-Mode-Background: hsl(207, 26%, 17%);
+  --color-Grey-950-Light-Mode-Text: hsl(200, 15%, 8%);
+  --color-Grey-400-Light-Mode-Input: hsl(0, 0%, 50%);
+  --color-Grey-50-Light-Mode-Background: hsl(0, 0%, 99%);
+  --color-White-Dark-Mode-Text-&-Light-Mode-Elements: hsl(0, 100%, 100%);
+
+  --font-NunitoSans: "Nunito Sans";
+}
