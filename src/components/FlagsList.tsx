@@ -19,9 +19,9 @@ export const FlagsList = ({ countrySearch }: { countrySearch: string }) => {
     const totalPages = Math.ceil(filteredCountries.length / itemsPerPage)
 
     return (
-    <div className="flex flex-wrap mx-10 mt-2 justify-between gap-10">
+    <div className="flex flex-wrap sm:mx-14 md:mx-18 mt-2 justify-between gap-10">
         {paginationCountries.map(country => (
-            <div key={country.name} className='w-68 h-95 rounded-md shadow-md bg-white flex flex-col'>
+            <div key={country.name} className='mx-13 md:mx-auto w-68 h-95 rounded-md shadow-md bg-white dark:bg-Blue-900-Dark-Mode-Elements dark:text-white flex flex-col transition-colors'>
                 <div>
                     <img src={country.flags.png} alt={country.name} />
                     <div className='flex flex-col gap-1 mt-3 ml-2 px-4 py-3'>
@@ -41,8 +41,10 @@ export const FlagsList = ({ countrySearch }: { countrySearch: string }) => {
                 </div>
             </div>
         ))}
-        <div className="flex items-center justify-center mx-auto mt-8 mb-8">
-            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+        <div className="w-full flex justify-center mt-8">
+            <div className="flex items-center justify-center mx-auto mt-8 mb-8">
+                <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+            </div>
         </div>
     </div>
   )

@@ -11,7 +11,9 @@ export const Input = ({ countrySearch, onCountrySearchChange }: Props) => {
         value={countrySearch}
         type="text"
         placeholder="Search for a country..." 
-        className="border-none outline-none w-120 h-10 rounded-md shadow-md bg-white pl-10 pr-4"
+        className="w-full sm:w-[320px] md:w-100 lg:w-120 h-12 rounded-md shadow-md bg-white dark:bg-Blue-900-Dark-Mode-Elements 
+        text-Grey-950-Light-Mode-Text dark:text-white placeholder:text-Grey-400-Light-Mode-Input 
+        dark:placeholder:text-gray-300 pl-10 pr-4}"
         onChange={(event) => onCountrySearchChange(event.target.value)}
       />
     </div>

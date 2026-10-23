@@ -35,7 +35,7 @@ export const Pagination = ({currentPage, totalPages, onPageChange}: Props) => {
         <button 
             onClick={handlePrevious} 
             disabled={currentPage === 1}
-            className="px-3 py-1 bg-gray-400 rounded disabled:opacity-50"
+            className="px-3 py-1 bg-gray-400 dark:bg-Blue-900-Dark-Mode-Elements text-gray-900 dark:text-white disabled:opacity-50"
         >Prev
         </button>
         {generarPaginacion(currentPage, totalPages).map((page, index) => (
@@ -43,7 +43,7 @@ export const Pagination = ({currentPage, totalPages, onPageChange}: Props) => {
                 key={index} 
                 onClick={() => onPageChange(page as number)} 
                 disabled={page === currentPage}
-                className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+                className="px-3 py-1 bg-gray-200 dark:bg-Blue-900-Dark-Mode-Elements text-gray-900 dark:text-white rounded disabled:opacity-50"
             >
                 {page}
             </button>
@@ -51,7 +51,7 @@ export const Pagination = ({currentPage, totalPages, onPageChange}: Props) => {
         <button 
             onClick={handleNext} 
             disabled={currentPage === totalPages}
-            className="px-3 py-1 bg-gray-400 rounded disabled:opacity-50"
+            className="px-3 py-1 bg-gray-400 dark:bg-Blue-900-Dark-Mode-Elements text-gray-900 dark:text-white disabled:opacity-50"
         >Next
         </button>
     </div>
