@@ -1,3 +1,5 @@
+import searchIcon from '../assets/icons/lupa.png'
+
 interface Props {
   countrySearch: string
   onCountrySearchChange: (value: string) => void
@@ -6,7 +8,11 @@ interface Props {
 export const Input = ({ countrySearch, onCountrySearchChange }: Props) => {
   return (
     <div className="relative">
-      <img src="src/assets/icons/lupa.png" className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" alt="lupa" />
+      <img 
+        src={searchIcon} 
+        className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" 
+        alt="lupa" 
+      />
       <input
         value={countrySearch}
         type="text"
