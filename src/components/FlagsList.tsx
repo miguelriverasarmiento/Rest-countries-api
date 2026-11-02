@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
-import data from '../api/data.json'
+import rawData from '../api/data.json'
 import {Pagination} from './Pagination'
 import { type Country } from '../types/Country'
 
 const formatPopulation = (population: number) =>
   new Intl.NumberFormat('en-US').format(population)
+
+const data = rawData as Country[];
 
 interface Props {
     countrySearch: string;
@@ -35,9 +37,17 @@ export const FlagsList = ({ countrySearch, regionFilter, onCountryClick }: Props
     <div className="flex flex-wrap sm:mx-14 md:mx-18 mt-2 justify-between gap-10">
         {paginationCountries.map(country => (
             <div 
-                key={country.name}
+                key={country.alpha3Code}
                 onClick={() => onCountryClick(country)}
                 className='mx-13 md:mx-auto w-68 h-95 rounded-md shadow-md bg-white dark:bg-Blue-900-Dark-Mode-Elements dark:text-white flex flex-col transition-colors cursor-pointer'
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === 'Space') {
+                    e.preventDefault()
+                    onCountryClick(country)
+                    }
+                }}
             >
                 <div>
                     <img src={country.flags.png} alt={country.name} />

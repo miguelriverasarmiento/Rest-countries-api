@@ -5,11 +5,6 @@ interface Props {
     onRegionFilterChange: (value: string) => void;
 }
 
-interface Region {
-    id: number;
-    region: string;
-}
-
 export const Select = ({ regionFilter, onRegionFilterChange }: Props) => {
 
     const uniqueRegions = [...new Set(

@@ -1,5 +1,7 @@
-import data from '../api/data.json'
+import rawData from '../api/data.json'
 import type { Country } from '../types/Country'
+
+const data = rawData as Country[];
 
 interface Props {
   country: Country;
